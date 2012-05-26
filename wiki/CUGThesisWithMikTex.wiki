@@ -4,7 +4,6 @@
 
 针对在MikTex下编译CUGThesis时的问题汇总
 
-
 = MikTex 2.8 =
 依赖的模板：
   * cjk
