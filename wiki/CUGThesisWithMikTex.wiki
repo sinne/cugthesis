@@ -3,11 +3,11 @@
 
 = Introduction =
 
-����好吧，有错！ʹ��MikTex�����£�����CUGThesisģ�����������ܡ�
+针对在MikTex下编译CUGThesis时的问题汇总
 
 
 = MikTex 2.8 =
-������ģ�壺
+依赖的模板:
   * cjk
   * cjk-font
   * cjkpunct
@@ -20,11 +20,6 @@
   * enumitem
   * cct
 
-��װ����ģ������Ҳ���������������Ĵ�����
+安装上述模板后，还可能出现下述一些问题:
   * can not fo  gbksong
   * simfang.ttf
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
