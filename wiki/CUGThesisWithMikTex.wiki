@@ -1,5 +1,4 @@
 #summary One-sentence summary of this page.
-#labels Featured
 
 = Introduction =
 
@@ -7,7 +6,7 @@
 
 
 = MikTex 2.8 =
-依赖的模板:
+依赖的模板：
   * cjk
   * cjk-font
   * cjkpunct
@@ -20,6 +19,6 @@
   * enumitem
   * cct
 
-安装上述模板后，还可能出现下述一些问题:
+安装上述模板后，还可能出现下述一些问题：
   * can not fo  gbksong
   * simfang.ttf
