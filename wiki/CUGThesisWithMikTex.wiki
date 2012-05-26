@@ -3,10 +3,26 @@
 
 = Introduction =
 
-Add your content here.
+针对使用MikTex环境下，编译CUGThesis模板的问题汇总。
 
 
-= Details =
+= MikTex 2.8 =
+依赖的模板：
+  * cjk
+  * cjk-font
+  * cjkpunct
+  * etoolbox
+  * ulem
+  * zhmetrics
+  * subfigure
+  * natbib
+  * hypernat
+  * enumitem
+  * cct
+
+安装上述模板后，也许还会出现下面的错误：
+  * can not fo  gbksong
+  * simfang.ttf
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
