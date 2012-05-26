@@ -20,4 +20,7 @@
 
 安装上述模板后，还可能出现下述一些问题：
   * can not fo  gbksong
+    1.在$(MikTex_Install_Dir)/fonts/下新建目录:sfd。
+	2.拷贝$(MikTex_Install_Dir)/ttf2tfm/base/目录下的文件复制到第一步新建的sfd目录中。
   * simfang.ttf
+  
