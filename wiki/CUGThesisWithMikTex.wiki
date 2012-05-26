@@ -3,11 +3,11 @@
 
 = Introduction =
 
-针对使用MikTex环境下，编译CUGThesis模板的问题汇总。
+锟斤拷锟斤拷濂藉惂锛屾湁閿欙紒使锟斤拷MikTex锟斤拷锟斤拷锟铰ｏ拷锟斤拷锟斤拷CUGThesis模锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟杰★拷
 
 
 = MikTex 2.8 =
-依赖的模板：
+锟斤拷锟斤拷锟斤拷模锟藉：
   * cjk
   * cjk-font
   * cjkpunct
@@ -20,7 +20,7 @@
   * enumitem
   * cct
 
-安装上述模板后，也许还会出现下面的错误：
+锟斤拷装锟斤拷锟斤拷模锟斤拷锟斤拷锟斤拷也锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟侥达拷锟斤拷锟斤拷
   * can not fo  gbksong
   * simfang.ttf
 
