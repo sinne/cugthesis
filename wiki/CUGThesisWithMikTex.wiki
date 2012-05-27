@@ -22,7 +22,7 @@
   * enumitem
   * cct
     # 如果没有安装cct，会提示ccmap.sty找不到
-    # cct 可以在ftp://ftp.cc.ac.cn/pub/cct/下载到。目前最近的版本地址为：ftp://ftp.cc.ac.cn/pub/cct/cct-0.61803-2a-win32.zip
+    # cct 可以在ftp://ftp.cc.ac.cn/pub/cct/ 下载到。目前最近的版本地址为：ftp://ftp.cc.ac.cn/pub/cct/cct-0.61803-2a-win32.zip
 == 安装上述模板后，还可能出现下述一些问题：==
   * !pdfTex error: pdflatex (file gbksong59): Font gbksong59 at 1325 not found
   该错误是由MikTex程序的内部目录问题引起。
