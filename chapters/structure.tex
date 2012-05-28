@@ -1,0 +1,43 @@
+\chapter{文档结构}
+\section{插入空白}
+
+这是\hspace{1cm}1cm空白.
+
+这是\hspace{4em}4个M空白.
+
+这是\qquad\qquad4个标准字空白.
+
+这也是\hspace{44pt}4个标准字空白.\\
+开始 \dotfill\ 结束\\
+左边 \hrulefill\ 中间 \hrulefill\ 右边\\
+北京 \dotfill\ 8:30 \hfill
+长沙 \dotfill\ 11:45\\
+北京 \dotfill\ 8:30 \hfill\hfill
+长沙 \dotfill\ 11:45\\
+北京 \dotfill\ 8:30 \hfill\hfill\hfill
+长沙 \dotfill\ 11:45\\
+北京 \dotfill\ 8:30 \hfill\hfill\hfill\hfill
+长沙 \dotfill\ 11:45\\
+北京 \dotfill\ 8:30 \hfill\hfill\hfill\hfill\hfill
+长沙 \dotfill\ 11:45\\
+北京 \dotfill\ 8:30 \hfill\hfill\hfill\hfill\hfill\hfill
+长沙 \dotfill\ 11:45\\
+北京 \dotfill\ 8:30 \hfill\hfill\hfill\hfill\hfill\hfill\hfill
+长沙 \dotfill\ 11:45\\
+北京 \dotfill\ 8:30 \hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill
+长沙 \dotfill\ 11:45\\
+北京 \dotfill\ 8:30 \hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill
+长沙 \dotfill\ 11:45\\
+\section{制表符}
+\begin{tabbing}
+  \hspace*{10em} \=\hspace{10em}\= sample column \= \kill %kill表示制表符结束，\\也可。
+  % \> for next tab, \\ for new line...
+  aaa \> ba \> cccc \\
+  b \> asdf \> h \\
+  hjk \> k \> kl
+\end{tabbing}
+
+\section{插入脚注}
+这是一个标准脚注\footnote{第一个}这是一个标准脚注\footnote{第二个}
+
+这是一个非标准脚注\footnote[8]{第8个}
