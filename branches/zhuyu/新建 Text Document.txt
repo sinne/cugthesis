@@ -1,0 +1,21 @@
+miktex 2.8
+
+cjk
+cjk-font
+cjkpunct
+ctex
+etoolbox
+ulem
+
+zhwinfonts.tex not founds  zhmetrics 
+titletoc.sty               titleref
+subfigure.sty              subfigure
+natbib.sty                 natbib
+hypernat.sty
+  下载了hypernat.zip,把里面的文件都解压到MiCTeX\MiKTeX 2.7\tex\latex\hyperref下
+        ○ 重新执行pdf完全排版，仍然报错
+        ○ Miktex option程序中(miktex set)，执行“refresh FNDB”和"update formats"
+        ○ 重新执行pdf完全排版，好了---生成main.pdf!
+
+enumitem.sty               enumitem
+ccmap.sty                  cmap

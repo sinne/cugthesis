@@ -1,0 +1,151 @@
+% !TEX encoding = System
+%% 
+%% This file `main.tex', which is written by Yang Bo,  is the thesis template of China Univ. of Geosciences.
+%% It works with the configuration files, `CUGthesis.cls' and `CUGthesis.cfg'.
+%%
+%% Author: Yang Bo, Institute of Geophysics & Geomatics, China Univ. of Geoscience, Wuhan, China.
+%% Version: 0.1
+%% Date: 2011/04/23
+%% Copyright 2011-2015
+%% Special thanks to Dr. Linyun Wu and Dr. Yinnian Wu
+%%
+%% Please send any comments, suggestions and questions to `yangbo.cug@163.com'.
+%%
+%% This file was generated from file(s) of the CUGthesis package project.
+
+\documentclass[pdftex,twoside,openany,doctor,nofundinfo]{CUGthesis}
+%%可选参数：
+%
+%% 1, nofundinfo 取消资助基金信息[缺省则显示基金信息]
+%
+%% 2, 排版引擎(三选一, 推荐选择pdftex)
+%% dvipdfm 使用 dvipdfm(x) 生成最终的 PDF 文档 (缺省设置）
+%% dvips 使用 dvips 生成最终的 PS 文档
+%% pdftex 使用 pdfLaTeX 生成最终的 PDF 文档
+%
+%% 3, 排版方式(二选一)[缺省为twoside]
+%% oneside 单面打印时选择
+%% twoside 双面打印时选择, 自动将章首页排到奇数页
+%
+%% 4, 硕士/博士选项(二选一)[缺省为博士论文]
+%% master 硕士
+%% doctor 博士
+%
+
+% 设置图形文件的搜索路径
+\graphicspath{{chapters/}{figures/}}
+
+%设置链接
+% \hypersetup{pdfstartview=FitH,bookmarksopen=true,colorlinks=true}
+% 取消链接的颜色（黑白打印时）
+\hypersetup{pdfstartview=FitH,bookmarksopen=true,citecolor=black,pdfborder=000,colorlinks=false}
+
+% 小节标题靠左对齐
+%\CTEXsetup[format+={\flushleft}]{section}
+
+\begin{document}
+\input zhwinfonts.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 封面部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  % 中文封面内容
+  \classification{}
+  \confidential{公开}
+  \UDC{}
+  \school{中国地质大学}
+  \title{中国地质大学硕博论文\LaTeX模板样例}
+  \author{XXX}
+  \major{地球物理学}
+  \advisor{XXX~教授}
+  \institute{地球物理与空间信息学院}
+  \submitdatechs{二○一二年五月}
+  \submitdate{2012.5}
+  \schoolnumber{10491}
+  \studentnumber{220090060}
+  \fund{自然科学基金}
+
+  % 英文封面内容
+  \englishdegree{Philosophy}
+  \englishtitle{\LaTeX~ Template of China University of Geosciences}
+  \englishauthor{XXX}
+  \englishmajor{Geophysics}
+  \englishadvisor{Prof. XXX}
+  \englishinstitute{Institute of Geophysics and Geomatics}
+
+%============================ 用于测试的自定义文字块 ================================%
+\newcommand{\aaa}{这是科技文稿排版测试这是科技文稿排版测试}
+\newcommand{\bbb}{\aaa \aaa \aaa
+
+ \aaa \aaa \aaa }
+\newcommand{\ccc}{\bbb \bbb \bbb \bbb \bbb
+
+ \bbb \bbb \bbb \bbb \bbb }
+\newcommand{\abc}{abcdefg1234567890}
+\newcommand{\upabc}{ABCDEFG}
+%============================ 用于测试的自定义文字块 ================================%
+  
+  %中文 封面1
+  \makecover
+  %中文 封面2
+  \maketitle
+  % 英文封面
+  \makeenglishtitle
+  %原创性声明
+  \makestatement
+  %使用授权书
+  \makeauthorization
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 前言部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+
+  % 个人简历
+  \include{chapters/resume}
+  % 摘要
+  \include{chapters/abstract}
+  % 目录
+  \include{chapters/contents}
+  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 正文部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+  %章节
+  \input{chapters/biaoti}
+  \input{chapters/structure}
+  \input{chapters/liebiao}
+  \input{chapters/figure}
+  \input{chapters/table}
+  \include{chapters/equation}
+  \include{chapters/fonts}
+  
+  % 致谢
+  \include{chapters/acknowledgement}
+  % 附录
+  \appendix
+
+  \include{chapters/chap-req}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 附件部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+  % 参考文献
+  % 使用 BibTeX
+  \addcontentsline{toc}{chapter}{参考文献}
+  % \bibliographystyle{chinesebst}
+  % \bibliographystyle{unsrt}
+  \bibliographystyle{GBT7714-2005NLang}
+  \addtolength{\itemsep}{-0.5 em} % 缩小参考文献间的垂直间距
+  \bibliography{bib/tex}
+  \nocite{*}
+  % 不使用 BibTeX
+  % \include{chapter/bib}
+
+\end{document}
