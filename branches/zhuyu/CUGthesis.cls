@@ -27,9 +27,9 @@
 %%硕博选项
 \newif\ifismaster\ismasterfalse
 % \newif\ifismaster\ismastertrue
-\DeclareOption{undergraduate}{\typeout {undergraduate}}
-\DeclareOption{master}{\ismastertrue}
-\DeclareOption{doctor}{\ismasterfalse}
+\DeclareOption{bachelor}{\thesistype{1}}
+\DeclareOption{master}{\thesistype{2}}
+\DeclareOption{doctor}{\thesistype{3}}
 %%基金信息选项
 \newif\ifCUGT@fundinfo \CUGT@fundinfotrue
 \DeclareOption{nofundinfo}{\CUGT@fundinfofalse}
