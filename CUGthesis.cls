@@ -24,12 +24,14 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{CUGthesis}
   [2011/04/23 v0.1 CUGthesis document class]
-%%硕博选项
-\newif\ifismaster\ismasterfalse
-% \newif\ifismaster\ismastertrue
-\DeclareOption{bachelor}{\thesistype{1}}
-\DeclareOption{master}{\thesistype{2}}
-\DeclareOption{doctor}{\thesistype{3}}
+%%学士,硕博选项
+\newif\if@doctor\@doctortrue
+\newif\if@master\@masterfalse
+\newif\if@bachelor\@bachelorfalse
+
+\DeclareOption{doctor}{\@doctortrue}
+\DeclareOption{master}{\@mastertrue\@doctorfalse}
+\DeclareOption{bachelor}{\@bachelortrue\@doctorfalse}
 %%基金信息选项
 \newif\ifCUGT@fundinfo \CUGT@fundinfotrue
 \DeclareOption{nofundinfo}{\CUGT@fundinfofalse}
@@ -316,44 +318,58 @@ headsep=10pt]
   \fi
 }
 
-%%%原创性声明
-\newcommand\makestatement{%
-  \cleardoublepage
-  \thispagestyle{empty}
-  \begin{center}	
-	\heiti\zihao{-2}中国地质大学（武汉）研究生学位论文原创性声明
-	\vspace{1em}
-  \end{center}
-  \songti\zihao{-4}\hspace{2em} 本人郑重声明：本人所呈交的\CUGT@value@degree学位论文《\CUGT@value@titlemark》，
-  是本人在导师的指导下，在中国地质大学（武汉）攻读\CUGT@value@degree学位期间独立进行研究工作所取得的成果。
-  论文中除已注明部分外不包含他人已发表或撰写过的研究成果，对论文的完成提供过帮助的有关人员已在文中说明并致以谢意。
-  
-  
-本人所呈交的\CUGT@value@degree学位论文没有违反学术道德和学术规范，没有侵权行为，并愿意承担由此而产生的法律责任和法律后果。
-
-
-\vspace{2em}
-学位论文作者（签字）： \hspace{5em}         日期：　　年　　月　　日
-}
-
-%%%授权书
-\newcommand\makeauthorization{%
-  \cleardoublepage
-  \thispagestyle{empty}
-  \begin{center}	
-	\heiti\zihao{-2}中国地质大学（武汉）学位论文使用授权书
+\if@bachelor
+	%%% 原创性声明
+	\newcommand\makestatement{%
+	  \cleardoublepage
+	  \thispagestyle{empty}
+	  \begin{center}	
+		\heiti\zihao{-2}学位论文原创性声明
+		\vspace{1em}
+	  \end{center}
+	  \songti\zihao{-4}\hspace{2em} 本人郑重声明：所呈交的论文是本人在导师的指导下独立进行研究所取得的研究成果。除了文中特别加以标注引用的内容外，本论文不包括任何其他个人或者集体已经发表或撰写的成果作品。本人完全意识到本声明的法律后果由本人承担。	
 	\vspace{2em}
-  \end{center}
-  \songti\zihao{4}\hspace{2em} 本人授权中国地质大学（武汉）可采用影印、缩印、数字化或其它复制手段保存本学位论文；
-  学校可向国家有关部门或机构送交本学位论文的电子版全文，编入有关数据库进行检索、下载及文献传递服务；
-  同意在校园网内提供全文浏览和下载服务。
-  
-\vspace{4em}
-\hspace{4em} 学位论文作者签名：\CUGTunderline[140pt]{}        \\    
-
-\hspace{4em} 日\hspace{6em}期：  \CUGTunderline[140pt]{\hspace{3em}年\hspace{2em}月\hspace{2em}日}
-}%
-
+	作者（签字）： \hspace{10em}         日期：　　年　　月　　日
+	}
+\else
+	%%%原创性声明
+	\newcommand\makestatement{%
+	  \cleardoublepage
+	  \thispagestyle{empty}
+	  \begin{center}	
+		\heiti\zihao{-2}中国地质大学（武汉）研究生学位论文原创性声明
+		\vspace{1em}
+	  \end{center}
+	  \songti\zihao{-4}\hspace{2em} 本人郑重声明：本人所呈交的\CUGT@value@degree学位论文《\CUGT@value@titlemark》，
+	  是本人在导师的指导下，在中国地质大学（武汉）攻读\CUGT@value@degree学位期间独立进行研究工作所取得的成果。
+	  论文中除已注明部分外不包含他人已发表或撰写过的研究成果，对论文的完成提供过帮助的有关人员已在文中说明并致以谢意。
+	  
+	  
+	本人所呈交的\CUGT@value@degree学位论文没有违反学术道德和学术规范，没有侵权行为，并愿意承担由此而产生的法律责任和法律后果。
+	
+	
+	\vspace{2em}
+	学位论文作者（签字）： \hspace{5em}         日期：　　年　　月　　日
+	}
+	
+	%%%授权书
+	\newcommand\makeauthorization{%
+	  \cleardoublepage
+	  \thispagestyle{empty}
+	  \begin{center}	
+		\heiti\zihao{-2}中国地质大学（武汉）学位论文使用授权书
+		\vspace{2em}
+	  \end{center}
+	  \songti\zihao{4}\hspace{2em} 本人授权中国地质大学（武汉）可采用影印、缩印、数字化或其它复制手段保存本学位论文；
+	  学校可向国家有关部门或机构送交本学位论文的电子版全文，编入有关数据库进行检索、下载及文献传递服务；
+	  同意在校园网内提供全文浏览和下载服务。
+	  
+	\vspace{4em}
+	\hspace{4em} 学位论文作者签名：\CUGTunderline[140pt]{}        \\    
+	
+	\hspace{4em} 日\hspace{6em}期：  \CUGTunderline[140pt]{\hspace{3em}年\hspace{2em}月\hspace{2em}日}
+	}%
+\fi
 %%中文摘要  
 \newenvironment{abstract}
   {%
