@@ -211,125 +211,201 @@ headsep=10pt]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%定义封面及固定信息页面
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%中文封面1
-\newcommand\makecover{%
-  \cleardoublepage
-  \thispagestyle{empty}
-  \begin{center}
-    \songti\zihao{3}
-      \CUGT@label@classification~\CUGTunderline[70pt]{\CUGT@value@classification}
-        \hfill
-      \CUGT@label@confidential~\CUGTunderline[70pt]{\CUGT@value@confidential} \\
-	  \CUGT@label@UDC~\CUGTunderline[75pt]{\CUGT@value@UDC} \hfill \, \\
-	\vspace{3em}
-      \heiti\zihao{-1} \CUGT@value@school \\
-      \CUGT@value@degree\CUGT@label@thesis \\
-	\vspace{3em}
-      \heiti\zihao{2} ~\CUGT@value@title~ \\
-	\vspace{3em}
-    \heiti\zihao{3}
-    \def\tabcolsep{1pt}
-    \def\arraystretch{1.5}
-    \begin{tabular}{lll}
-      \CUGT@label@author & ~\CUGT@value@author &\,\,\,\,\,\,
-	\\
-      \CUGT@label@major & ~\CUGT@value@major  &
-    \\
-      \CUGT@label@advisor & ~\CUGT@value@advisor &
-	\\
-	  \CUGT@label@institute & ~\CUGT@value@institute &
-    \end{tabular}
-	\vskip \stretch{0.6}
-	\songti\zihao{3}
-      \CUGT@value@submitdatechs
-	\vspace{1em}	
-  \end{center}
-}
+\if@bachelor
+	\newcommand\makecover{%
+	}%
+\else
+	\newcommand\makecover{%
+	  \cleardoublepage
+	  \thispagestyle{empty}
+	  \begin{center}
+	    \songti\zihao{3}
+	      \CUGT@label@classification~\CUGTunderline[70pt]{\CUGT@value@classification}
+	        \hfill
+	      \CUGT@label@confidential~\CUGTunderline[70pt]{\CUGT@value@confidential} \\
+		  \CUGT@label@UDC~\CUGTunderline[75pt]{\CUGT@value@UDC} \hfill \, \\
+		\vspace{3em}
+	      \heiti\zihao{-1} \CUGT@value@school \\
+	      \CUGT@value@degree\CUGT@label@thesis \\
+		\vspace{3em}
+	      \heiti\zihao{2} ~\CUGT@value@title~ \\
+		\vspace{3em}
+	    \heiti\zihao{3}
+	    \def\tabcolsep{1pt}
+	    \def\arraystretch{1.5}
+	    \begin{tabular}{lll}
+	      \CUGT@label@author & ~\CUGT@value@author &\,\,\,\,\,\,
+		\\
+	      \CUGT@label@major & ~\CUGT@value@major  &
+	    \\
+	      \CUGT@label@advisor & ~\CUGT@value@advisor &
+		\\
+		  \CUGT@label@institute & ~\CUGT@value@institute &
+	    \end{tabular}
+		\vskip \stretch{0.6}
+		\songti\zihao{3}
+	      \CUGT@value@submitdatechs
+		\vspace{1em}	
+	  \end{center}
+	}%
+\fi
 
 %%%中文封面2
-\renewcommand\maketitle{%
-  \cleardoublepage
-  \thispagestyle{empty}
-  \begin{center}
-    \songti\zihao{3}
-      \CUGT@label@schoolnumber~\CUGT@value@schoolnumber
-        \hfill
-      \CUGT@label@studentnumber~\CUGT@value@studentnumber
-    \vskip \stretch{1.8}
-      \heiti\zihao{2} \CUGT@value@school \\
-      \CUGT@value@degree\CUGT@label@thesis
-    \vskip \stretch{0.9}
-      \heiti\zihao{3} ~\CUGT@value@title~
-    \vskip \stretch{1}
-    \songti\zihao{3}
-    \def\tabcolsep{1pt}
-    \def\arraystretch{1.0}
-    \begin{tabular}{lll}
-      \CUGT@label@author & ~\CUGT@value@author &\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,
-	\\
-      \CUGT@label@major & ~\CUGT@value@major  &
-    \\
-      \CUGT@label@advisor & ~\CUGT@value@advisor &
-    \end{tabular}
-	\vskip \stretch{2.9}
-	 \ifCUGT@fundinfo
-	\songti\zihao{5}
-      \CUGT@label@fundhead \CUGT@value@fund \CUGT@label@fundtail
-	\vskip \stretch{0.6}
-	\fi
-	\songti\zihao{3}
-      \CUGT@value@submitdatechs
-	\vspace{1em}	
-  \end{center}
-}
+\if@bachelor
+	\renewcommand\maketitle{%
+	 \cleardoublepage
+		\thispagestyle{empty}
+		\begin{center}
+		\includegraphics[width=1.5in]{../figures/school_logo.png}
 
+		\vspace{1em}
+		\heiti\zihao{1}本科毕业论文（设计）
+		
+		\songti\zihao{5}\vspace{6em}
+		\songti\zihao{4}题目：~\CUGTunderline[250pt]{}
+
+		\hspace{3em}~\CUGTunderline[250pt]{}
+		\vspace{1em}
+
+		姓\hspace{2em}名：~\CUGTunderline[7em]{}\hspace{2em}学号：~\CUGTunderline[70pt]{}
+
+		院（系）：~\CUGTunderline[7em]{}\hspace{2em}专业：~\CUGTunderline[70pt]{}
+
+		指导老师：~\CUGTunderline[7em]{}\hspace{2em}职称：~\CUGTunderline[70pt]{}
+
+		评~ 阅~ 人：~\CUGTunderline[7em]{}\hspace{2em}职称：~\CUGTunderline[70pt]{}
+
+		\vspace{5em}
+		~\CUGTunderline[3em]{2011}年~\CUGTunderline[3em]{06}月
+		\end{center}
+
+		%\begin{figure}[htbp]
+		%\centering\includegraphics[width=1.5in]{../figures/school_logo.png}
+		%\caption{}\label{}
+		%\end{figure}
+	}%
+\else
+	\renewcommand\maketitle{%
+	  \cleardoublepage
+	  \thispagestyle{empty}
+	  \begin{center}
+	    \songti\zihao{3}
+	      \CUGT@label@schoolnumber~\CUGT@value@schoolnumber
+	        \hfill
+	      \CUGT@label@studentnumber~\CUGT@value@studentnumber
+	    \vskip \stretch{1.8}
+	      \heiti\zihao{2} \CUGT@value@school \\
+	      \CUGT@value@degree\CUGT@label@thesis
+	    \vskip \stretch{0.9}
+	      \heiti\zihao{3} ~\CUGT@value@title~
+	    \vskip \stretch{1}
+	    \songti\zihao{3}
+	    \def\tabcolsep{1pt}
+	    \def\arraystretch{1.0}
+	    \begin{tabular}{lll}
+	      \CUGT@label@author & ~\CUGT@value@author &\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,
+		\\
+	      \CUGT@label@major & ~\CUGT@value@major  &
+	    \\
+	      \CUGT@label@advisor & ~\CUGT@value@advisor &
+	    \end{tabular}
+		\vskip \stretch{2.9}
+		 \ifCUGT@fundinfo
+		\songti\zihao{5}
+	      \CUGT@label@fundhead \CUGT@value@fund \CUGT@label@fundtail
+		\vskip \stretch{0.6}
+		\fi
+		\songti\zihao{3}
+	      \CUGT@value@submitdatechs
+		\vspace{1em}	
+	  \end{center}
+	}%
+\fi
+
+\if@bachelor
+	\newcommand\englishtitle[1]{\def\CUGT@value@englishtitle{#1}}
+	\newcommand\englishauthor[1]{\def\CUGT@value@englishauthor{#1}}
+	\newcommand\englishadvisor[1]{\def\CUGT@value@englishadvisor{#1}}
+	\newcommand\englishinstitute[1]{\def\CUGT@value@englishinstitute{#1}}
+	\newcommand\englishdate[1]{\def\CUGT@value@englishdate{#1}}
+	\newcommand\englishdegree[1]{\def\CUGT@value@englishdegree{#1}}
+	\newcommand\englishmajor[1]{\def\CUGT@value@englishmajor{#1}}
+	\newcommand\makeenglishtitle{%
+	}
+\else
 %%%英文封面
-\newcommand\englishtitle[1]{\def\CUGT@value@englishtitle{#1}}
-\newcommand\englishauthor[1]{\def\CUGT@value@englishauthor{#1}}
-\newcommand\englishadvisor[1]{\def\CUGT@value@englishadvisor{#1}}
-\newcommand\englishinstitute[1]{\def\CUGT@value@englishinstitute{#1}}
-\newcommand\englishdate[1]{\def\CUGT@value@englishdate{#1}}
-\newcommand\englishdegree[1]{\def\CUGT@value@englishdegree{#1}}
-\newcommand\englishmajor[1]{\def\CUGT@value@englishmajor{#1}}
-\newcommand\makeenglishtitle{%
-  \cleardoublepage
-  \thispagestyle{empty}
-  \begin{center}
-	\normalsize\zihao{-3} \CUGT@label@englishstatement \\
-	\vspace{5em}
-      \bf\zihao{-2} \CUGT@value@englishtitle
-    \vskip \stretch{1}
-	\normalfont\zihao{4}
-    \def\tabcolsep{1pt}
-    \def\arraystretch{1.0}
-    \begin{tabular}{rl}
-      \CUGT@label@englishauthor &~~\CUGT@value@englishauthor \\
-      \CUGT@label@englishmajor  &~~\CUGT@value@englishmajor \\
-      \CUGT@label@englishadvisor&~~\CUGT@value@englishadvisor \\
-    \end{tabular} 
-    \vskip \stretch{2}
-      \normalfont\zihao{-3} \CUGT@label@englishschool \\
-    \vskip 5pt
-      \normalfont\zihao{-3} \CUGT@label@englishadress
-  \end{center}
-  \clearpage
-  \if@twoside
-    \thispagestyle{empty}
-    \cleardoublepage
-  \fi
-}
+	\newcommand\englishtitle[1]{\def\CUGT@value@englishtitle{#1}}
+	\newcommand\englishauthor[1]{\def\CUGT@value@englishauthor{#1}}
+	\newcommand\englishadvisor[1]{\def\CUGT@value@englishadvisor{#1}}
+	\newcommand\englishinstitute[1]{\def\CUGT@value@englishinstitute{#1}}
+	\newcommand\englishdate[1]{\def\CUGT@value@englishdate{#1}}
+	\newcommand\englishdegree[1]{\def\CUGT@value@englishdegree{#1}}
+	\newcommand\englishmajor[1]{\def\CUGT@value@englishmajor{#1}}
+	\newcommand\makeenglishtitle{%
+	  \cleardoublepage
+	  \thispagestyle{empty}
+	  \begin{center}
+		\normalsize\zihao{-3} \CUGT@label@englishstatement \\
+		\vspace{5em}
+	      \bf\zihao{-2} \CUGT@value@englishtitle
+	    \vskip \stretch{1}
+		\normalfont\zihao{4}
+	    \def\tabcolsep{1pt}
+	    \def\arraystretch{1.0}
+	    \begin{tabular}{rl}
+	      \CUGT@label@englishauthor &~~\CUGT@value@englishauthor \\
+	      \CUGT@label@englishmajor  &~~\CUGT@value@englishmajor \\
+	      \CUGT@label@englishadvisor&~~\CUGT@value@englishadvisor \\
+	    \end{tabular} 
+	    \vskip \stretch{2}
+	      \normalfont\zihao{-3} \CUGT@label@englishschool \\
+	    \vskip 5pt
+	      \normalfont\zihao{-3} \CUGT@label@englishadress
+	  \end{center}
+	  \clearpage
+	  \if@twoside
+	    \thispagestyle{empty}
+	    \cleardoublepage
+	  \fi
+	}%
+\fi
 
 \if@bachelor
 	%%% 原创性声明
 	\newcommand\makestatement{%
 	  \cleardoublepage
 	  \thispagestyle{empty}
-	  \begin{center}	
-		\heiti\zihao{-2}学位论文原创性声明
+	 \begin{center}	
+		\heiti\zihao{-3}学位论文原创性声明
 		\vspace{1em}
-	  \end{center}
-	  \songti\zihao{-4}\hspace{2em} 本人郑重声明：所呈交的论文是本人在导师的指导下独立进行研究所取得的研究成果。除了文中特别加以标注引用的内容外，本论文不包括任何其他个人或者集体已经发表或撰写的成果作品。本人完全意识到本声明的法律后果由本人承担。	
+	 \end{center}
+	 \songti\zihao{-4}\hspace{2em} 本人郑重声明：所呈交的论文是本人在导师的指导下独立进行研究所取得的研究成果。除了文中特别加以标注引用的内容外，本论文不包括任何其他个人或者集体已经发表或撰写的成果作品。本人完全意识到本声明的法律后果由本人承担。	
+	\vspace{1em}
+
+
+	\hspace{6em}作者签字： \hspace{10em}年\hspace{1em}月\hspace{1em} 日
 	\vspace{2em}
-	作者（签字）： \hspace{10em}         日期：　　年　　月　　日
+	}
+	\newcommand\makeauthorization{%
+		\begin{center}
+			\heiti\zihao{-3}学位论文版权使用授权书
+			\vspace{1em}
+		\end{center}
+		\songti\zihao{-4}\hspace{2em}本学位论文作者完全了解学校有关保障、使用学位论文的规定，同意学校保留并向有关学位论文管理部门或机构送交论文的复印件和电子版，允许论文被查阅和借阅。本人授权省级优秀学士学位论文评选机构将本学位论文的全部或部分内容编入有关数据库进行检索，可以采用影印、缩印或扫描等复制手段保存和汇编本学位论文。
+
+		\hspace{2em}	本学位论文属于
+
+		\hspace{8em}1、保密 $\text{\rlap{}}\square$，在~\CUGTunderline[70pt]{}年解密后适用于本授权书。
+		
+		\hspace{8em}2、不保密  $\text{\rlap{$\checkmark$}}\square$。
+
+		\hspace{8em}（请在以上相应方框内打“√”）
+
+		\vspace{1em}
+		\hspace{6em}作者签名： \hspace{10em}年\hspace{1em}月\hspace{1em} 日
+
+		\vspace{1em}
+		\hspace{6em}导师签名： \hspace{10em}年\hspace{1em}月\hspace{1em} 日		
 	}
 \else
 	%%%原创性声明
